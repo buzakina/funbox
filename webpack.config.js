@@ -6,7 +6,7 @@ module.exports = {
     output: {
         path: path.join(__dirname,'build'),
         filename: 'minified.js',
-        publicPath: '/build/'
+        publicPath: '/funbox/build/'
     },
     module: {
         rules: [
@@ -26,7 +26,28 @@ module.exports = {
                     'css-loader'
                 ]
             },
-
+            {
+                test: /\.(png|jpg|gif)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: 'img/[name].[ext]'
+                        }
+                    }
+                ]
+            },
+            {
+                test: /\.(otf)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: 'fonts/[name].[ext]'
+                        }
+                    }
+                ]
+            }
         ]
     }
 

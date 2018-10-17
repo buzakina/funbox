@@ -11,7 +11,6 @@ function Catalog (props) {
         <section className="product">
             {elements}
         </section>
-
     )
 }
 export default Catalog
